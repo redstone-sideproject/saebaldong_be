@@ -1,9 +1,6 @@
 {
   "version": 2,
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index"
-    }
-  ]
+  "buildCommand": "yarn build",
+  "builds": [{ "src": "dist/main.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "dist/main.js" }]
 }

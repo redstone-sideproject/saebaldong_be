@@ -1,0 +1,1 @@
+{"version":3,"file":"create-changelog.dto.js","sourceRoot":"","sources":["../../../src/changelogs/dtos/create-changelog.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qDAA4E;AAI5E,MAAa,kBAAkB;CAU9B;AAVD,gDAUC;AARC;IADC,IAAA,wBAAM,EAAC,CAAC,KAAK,EAAE,KAAK,CAAC,CAAC;;gDACC;AAIxB;IAFC,IAAA,0BAAQ,GAAE;IACV,IAAA,4BAAU,GAAE;;uDACM;AAGnB;IADC,IAAA,8BAAY,GAAE;8BACT,IAAI;gDAAA"}

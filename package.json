@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build && tsc-alias -p tsconfig.build.json",
+    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "cross-env NODE_ENV=development nest start",
     "start:dev": "cross-env NODE_ENV=development nest start --watch",
@@ -106,8 +106,5 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   },
-  "main": "index.js",
-  "_moduleAliases": {
-    "@src": "src"
-  }
+  "main": "index.js"
 }

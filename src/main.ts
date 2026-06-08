@@ -1,10 +1,11 @@
 import { NestFactory } from '@nestjs/core'
-import { AppModule } from '@src/app.module'
 import { ValidationPipe } from '@nestjs/common'
 import * as cookieParser from 'cookie-parser'
 import type { Request, Response } from 'express'
 
 async function createNestApp() {
+  // 동적 import: AppModule 로드 단계(네이티브 모듈 require 등)의 에러까지 try로 잡기 위함
+  const { AppModule } = await import('@src/app.module')
   const app = await NestFactory.create(AppModule)
 
   app.enableCors({
@@ -34,13 +35,24 @@ async function bootstrap() {
 let cachedServer: ((req: Request, res: Response) => void) | null = null
 
 export default async function handler(req: Request, res: Response) {
-  if (!cachedServer) {
-    const app = await createNestApp()
-    await app.init()
-    cachedServer = app.getHttpAdapter().getInstance()
-  }
+  try {
+    if (!cachedServer) {
+      const app = await createNestApp()
+      await app.init()
+      cachedServer = app.getHttpAdapter().getInstance()
+    }
 
-  return cachedServer!(req, res)
+    return cachedServer!(req, res)
+  } catch (err) {
+    // ⚠️ 임시 디버그: 실제 크래시 원인을 응답 본문으로 노출 (원인 파악 후 제거)
+    console.error('BOOTSTRAP_ERROR', err)
+    res.statusCode = 500
+    res.setHeader('content-type', 'text/plain; charset=utf-8')
+    res.end(
+      'BOOTSTRAP_ERROR\n' +
+        (err instanceof Error ? `${err.message}\n\n${err.stack}` : String(err)),
+    )
+  }
 }
 
 if (!process.env.VERCEL) {

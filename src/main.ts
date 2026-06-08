@@ -35,11 +35,32 @@ async function bootstrap() {
 let cachedServer: ((req: Request, res: Response) => void) | null = null
 
 export default async function handler(req: Request, res: Response) {
+  // ⚠️ 임시 진단: Nest 부트스트랩을 거치지 않는 최소 응답. 함수 자체가 로드되는지 확인용.
+  if (req.url === '/__ping') {
+    res.statusCode = 200
+    res.setHeader('content-type', 'text/plain; charset=utf-8')
+    res.end(`pong node=${process.version} vercel=${String(process.env.VERCEL)}`)
+    return
+  }
+
   try {
     if (!cachedServer) {
-      const app = await createNestApp()
-      await app.init()
-      cachedServer = app.getHttpAdapter().getInstance()
+      const init = (async () => {
+        const app = await createNestApp()
+        await app.init()
+        return app.getHttpAdapter().getInstance()
+      })()
+      // 부팅이 멈추면(예: DB 연결 hang) 함수 타임아웃 대신 명시적 에러로 전환
+      const timeout = new Promise<never>((_, reject) =>
+        setTimeout(
+          () => reject(new Error('INIT_TIMEOUT (8s) — 부팅이 멈춤 (DB 연결 등)')),
+          8000,
+        ),
+      )
+      cachedServer = (await Promise.race([init, timeout])) as (
+        req: Request,
+        res: Response,
+      ) => void
     }
 
     return cachedServer!(req, res)

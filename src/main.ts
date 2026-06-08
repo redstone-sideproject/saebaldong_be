@@ -2,9 +2,10 @@ import { NestFactory } from '@nestjs/core'
 import { ValidationPipe } from '@nestjs/common'
 import * as cookieParser from 'cookie-parser'
 import type { Request, Response } from 'express'
-import { AppModule } from './app.module'
 
 async function createNestApp() {
+  // 동적 import: AppModule 로드 단계(네이티브 모듈 require 등)의 에러까지 try로 잡기 위함
+  const { AppModule } = await import('./app.module')
   const app = await NestFactory.create(AppModule)
 
   app.enableCors({

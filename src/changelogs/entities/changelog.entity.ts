@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm'
 
-import { ChangelogTypeUnion } from '@src/changelogs/types/changelog'
+import { ChangelogTypeUnion } from '../types/changelog'
 
 @Entity('changelog')
 export class ChangelogEntity {

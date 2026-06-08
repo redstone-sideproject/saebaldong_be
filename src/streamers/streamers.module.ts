@@ -1,12 +1,12 @@
 import { Module, forwardRef } from '@nestjs/common'
-import { StreamersService } from '@src/streamers/streamers.service'
-import { StreamersController } from '@src/streamers/streamers.controller'
+import { StreamersService } from './streamers.service'
+import { StreamersController } from './streamers.controller'
 
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { Streamer } from '@src/streamers/streamer.entity'
-import { Timeline } from '@src/timeline/timeline.entity'
-import { Participation } from '@src/timeline/participation.entity'
-import { TimelineModule } from '@src/timeline/timeline.module'
+import { Streamer } from './streamer.entity'
+import { Timeline } from '../timeline/timeline.entity'
+import { Participation } from '../timeline/participation.entity'
+import { TimelineModule } from '../timeline/timeline.module'
 
 @Module({
   imports: [

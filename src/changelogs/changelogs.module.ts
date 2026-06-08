@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common'
-import { ChangelogsController } from '@src/changelogs/changelogs.controller'
-import { ChangelogsService } from '@src/changelogs/changelogs.service'
+import { ChangelogsController } from './changelogs.controller'
+import { ChangelogsService } from './changelogs.service'
 
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { ChangelogEntity } from '@src/changelogs/entities/changelog.entity'
+import { ChangelogEntity } from './entities/changelog.entity'
 
 @Module({
   imports: [TypeOrmModule.forFeature([ChangelogEntity])],

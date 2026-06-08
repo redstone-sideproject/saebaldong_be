@@ -5,7 +5,7 @@ import {
   ValorantTierUnion,
   TeamTypeUnion,
   MatchTypeUnion,
-} from '@src/valorant-match/types/valorant-match'
+} from '../types/valorant-match'
 
 class ValorantMatchStreamerDto {
   @Expose()

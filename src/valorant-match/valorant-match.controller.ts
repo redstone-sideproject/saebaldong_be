@@ -1,11 +1,11 @@
 import { Controller, Get, Param, Query } from '@nestjs/common'
-import { Serialize } from '@src/interceptors/serialize.interceptor'
+import { Serialize } from '../interceptors/serialize.interceptor'
 
-import { ValorantMatchService } from '@src/valorant-match/valorant-match.service'
+import { ValorantMatchService } from './valorant-match.service'
 import {
   ValorantMatchDetailDto,
   ValorantMatchPageDto,
-} from '@src/valorant-match/dtos/valorant-match.dto'
+} from './dtos/valorant-match.dto'
 
 @Controller('valorant-match')
 export class ValorantMatchController {

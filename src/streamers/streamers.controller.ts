@@ -12,12 +12,12 @@ import {
   UseGuards,
   InternalServerErrorException,
 } from '@nestjs/common'
-import { GetStreamersDto } from '@src/streamers/dtos/streamer.dto'
-import { StreamersService } from '@src/streamers/streamers.service'
-import { CreateStreamerDto } from '@src/streamers/dtos/create-streamer.dto'
-import { UpdateStreamerDto } from '@src/streamers/dtos/update-streamer.dto'
+import { GetStreamersDto } from './dtos/streamer.dto'
+import { StreamersService } from './streamers.service'
+import { CreateStreamerDto } from './dtos/create-streamer.dto'
+import { UpdateStreamerDto } from './dtos/update-streamer.dto'
 
-import { JwtAuthGuard } from '@src/auth/guards/jwt-auth.guard'
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard'
 
 @Controller('streamer')
 export class StreamersController {

@@ -10,14 +10,14 @@ import { Between, Repository } from 'typeorm'
 
 import { InjectRepository } from '@nestjs/typeorm'
 
-import { Timeline } from '@src/timeline/timeline.entity'
+import { Timeline } from './timeline.entity'
 
 import {
   CreateTimelineDto,
   ParticipantDto,
-} from '@src/timeline/dtos/create-timeline.dto'
-import { Participation } from '@src/timeline/participation.entity'
-import { StreamersService } from '@src/streamers/streamers.service'
+} from './dtos/create-timeline.dto'
+import { Participation } from './participation.entity'
+import { StreamersService } from '../streamers/streamers.service'
 
 @Injectable()
 export class TimelineService {

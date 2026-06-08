@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common'
-import { AppController } from '@src/app.controller'
-import { AppService } from '@src/app.service'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
 
 import { ConfigModule, ConfigService } from '@nestjs/config'
 
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { typeOrmConfig } from '@src/config/typeorm.config'
-import { StreamersModule } from '@src/streamers/streamers.module'
-import { TimelineModule } from '@src/timeline/timeline.module'
+import { typeOrmConfig } from './config/typeorm.config'
+import { StreamersModule } from './streamers/streamers.module'
+import { TimelineModule } from './timeline/timeline.module'
 import { ChangelogsModule } from './changelogs/changelogs.module'
 import { ValorantMatchModule } from './valorant-match/valorant-match.module'
 import { AuthModule } from './auth/auth.module'

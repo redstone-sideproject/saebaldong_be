@@ -8,19 +8,19 @@ import {
 import { Repository } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
 
-import { Streamer } from '@src/streamers/streamer.entity'
-import { CreateStreamerDto } from '@src/streamers/dtos/create-streamer.dto'
+import { Streamer } from './streamer.entity'
+import { CreateStreamerDto } from './dtos/create-streamer.dto'
 
 import { NotFoundException } from '@nestjs/common'
-import { Timeline } from '@src/timeline/timeline.entity'
-import { Participation } from '@src/timeline/participation.entity'
+import { Timeline } from '../timeline/timeline.entity'
+import { Participation } from '../timeline/participation.entity'
 import {
   GetStreamersDto,
   StreamerWithStatsDto,
-} from '@src/streamers/dtos/streamer.dto'
+} from './dtos/streamer.dto'
 
-import { TimelineService } from '@src/timeline/timeline.service'
-import { GetStreamerProfileDto } from '@src/streamers/dtos/streamer.dto'
+import { TimelineService } from '../timeline/timeline.service'
+import { GetStreamerProfileDto } from './dtos/streamer.dto'
 
 @Injectable()
 export class StreamersService {

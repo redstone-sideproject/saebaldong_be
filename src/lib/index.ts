@@ -1,7 +1,7 @@
 import {
   ChangelogDateGroupedDto,
   ChangelogItemDto,
-} from '@src/changelogs/dtos/get-changelog.dto'
+} from '../changelogs/dtos/get-changelog.dto'
 
 export function groupByDate(
   data: ChangelogItemDto[],

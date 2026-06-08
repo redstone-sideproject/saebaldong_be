@@ -3,10 +3,10 @@ import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm'
 
-import { ValorantMatchEntity } from '@src/valorant-match/entities/valorant-match.entitiy'
-import { ValorantMatchPlayerEntity } from '@src/valorant-match/entities/valorant-match-player.entity'
+import { ValorantMatchEntity } from './entities/valorant-match.entitiy'
+import { ValorantMatchPlayerEntity } from './entities/valorant-match-player.entity'
 
-import { MatchTypeUnion } from '@src/valorant-match/types/valorant-match'
+import { MatchTypeUnion } from './types/valorant-match'
 
 @Injectable()
 export class ValorantMatchService {

@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core'
 
-import { UserService } from '@src/user/user.service'
-import { AdminCliModule } from '@src/scripts/admin-cli.module'
+import { UserService } from '../user/user.service'
+import { AdminCliModule } from './admin-cli.module'
 import * as bcrypt from 'bcrypt'
 
 async function bootstrap() {

@@ -15,8 +15,8 @@ import {
   MatchTypeUnion,
   TeamTypeUnion,
   ValorantMapUnion,
-} from '@src/valorant-match/types/valorant-match'
-import { ValorantMatchPlayerEntity } from '@src/valorant-match/entities/valorant-match-player.entity'
+} from '../types/valorant-match'
+import { ValorantMatchPlayerEntity } from './valorant-match-player.entity'
 
 @Entity('valorant_match')
 export class ValorantMatchEntity {

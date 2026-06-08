@@ -3,11 +3,11 @@ import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 
 import { TypeOrmModule } from '@nestjs/typeorm'
-import { typeOrmConfig } from '@src/config/typeorm.config'
+import { typeOrmConfig } from '../config/typeorm.config'
 
-import { UserEntity } from '@src/user/entities/user.entity'
+import { UserEntity } from '../user/entities/user.entity'
 
-import { UserService } from '@src/user/user.service'
+import { UserService } from '../user/user.service'
 
 @Module({
   imports: [

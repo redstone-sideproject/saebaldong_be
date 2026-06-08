@@ -12,14 +12,14 @@ import {
   NotFoundException,
   UseGuards,
 } from '@nestjs/common'
-import { TimelineService } from '@src/timeline/timeline.service'
+import { TimelineService } from './timeline.service'
 
-import { CreateTimelineDto } from '@src/timeline/dtos/create-timeline.dto'
-import { UpdateTimelineDto } from '@src/timeline/dtos/update-timieline.dto'
+import { CreateTimelineDto } from './dtos/create-timeline.dto'
+import { UpdateTimelineDto } from './dtos/update-timieline.dto'
 
-import { Transactional } from '@src/interceptors/transaction.interceptor'
+import { Transactional } from '../interceptors/transaction.interceptor'
 
-import { JwtAuthGuard } from '@src/auth/guards/jwt-auth.guard'
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard'
 
 @Controller('timeline')
 export class TimelineController {

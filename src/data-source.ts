@@ -1,7 +1,7 @@
 import 'tsconfig-paths/register'
 import { DataSource } from 'typeorm'
 import { ConfigService } from '@nestjs/config'
-import { typeOrmConfig } from '@src/config/typeorm.config'
+import { typeOrmConfig } from './config/typeorm.config'
 import { config } from 'dotenv'
 
 const env = process.env.NODE_ENV || 'development'

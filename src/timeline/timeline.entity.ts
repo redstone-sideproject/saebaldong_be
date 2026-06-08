@@ -7,7 +7,7 @@ import {
   OneToMany,
 } from 'typeorm'
 
-import { Participation } from '@src/timeline/participation.entity'
+import { Participation } from './participation.entity'
 
 @Entity()
 export class Timeline {

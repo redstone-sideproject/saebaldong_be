@@ -5,8 +5,8 @@ import {
   Column,
   PrimaryGeneratedColumn,
 } from 'typeorm'
-import { Timeline } from '@src/timeline/timeline.entity'
-import { Streamer } from '@src/streamers/streamer.entity'
+import { Timeline } from './timeline.entity'
+import { Streamer } from '../streamers/streamer.entity'
 
 @Entity()
 export class Participation {

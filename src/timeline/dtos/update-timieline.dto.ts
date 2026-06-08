@@ -8,7 +8,7 @@ import {
   ValidateNested,
 } from 'class-validator'
 
-import { ParticipantDto } from '@src/timeline/dtos/create-timeline.dto'
+import { ParticipantDto } from './create-timeline.dto'
 
 export class UpdateTimelineDto {
   @IsOptional()

@@ -4,9 +4,9 @@ import { JwtService, TokenExpiredError } from '@nestjs/jwt'
 import * as bcrypt from 'bcrypt'
 
 import { ConfigService } from '@nestjs/config'
-import { UserService } from '@src/user/user.service'
-import { LoginDto } from '@src/auth/dtos/login.dto'
-import { JwtPayload, TokenData } from '@src/auth/types/token-data.type'
+import { UserService } from '../user/user.service'
+import { LoginDto } from './dtos/login.dto'
+import { JwtPayload, TokenData } from './types/token-data.type'
 
 @Injectable()
 export class AuthService {

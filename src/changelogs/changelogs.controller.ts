@@ -11,11 +11,11 @@ import {
   HttpStatus,
 } from '@nestjs/common'
 
-import { ChangelogsService } from '@src/changelogs/changelogs.service'
-import { JwtAuthGuard } from '@src/auth/guards/jwt-auth.guard'
+import { ChangelogsService } from './changelogs.service'
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard'
 
-import { CreateChangelogDto } from '@src/changelogs/dtos/create-changelog.dto'
-import { UpdateChangelogDto } from '@src/changelogs/dtos/update-changelog.dto'
+import { CreateChangelogDto } from './dtos/create-changelog.dto'
+import { UpdateChangelogDto } from './dtos/update-changelog.dto'
 @Controller('changelog')
 export class ChangelogsController {
   constructor(private readonly changelogsService: ChangelogsService) {}

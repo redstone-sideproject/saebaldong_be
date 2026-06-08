@@ -6,9 +6,9 @@ import {
   PrimaryGeneratedColumn,
   OneToMany,
 } from 'typeorm'
-import { Participation } from '@src/timeline/participation.entity'
+import { Participation } from '../timeline/participation.entity'
 
-import { ValorantMatchPlayerEntity } from '@src/valorant-match/entities/valorant-match-player.entity'
+import { ValorantMatchPlayerEntity } from '../valorant-match/entities/valorant-match-player.entity'
 
 @Entity()
 export class Streamer {

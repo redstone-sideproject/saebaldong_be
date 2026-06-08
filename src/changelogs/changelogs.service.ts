@@ -3,16 +3,16 @@ import { Injectable, NotFoundException } from '@nestjs/common'
 import { Repository } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
 
-import { ChangelogEntity } from '@src/changelogs/entities/changelog.entity'
+import { ChangelogEntity } from './entities/changelog.entity'
 
 import {
   ChangelogDateGroupedDto,
   ChangelogItemDto,
-} from '@src/changelogs/dtos/get-changelog.dto'
+} from './dtos/get-changelog.dto'
 
-import { CreateChangelogDto } from '@src/changelogs/dtos/create-changelog.dto'
-import { UpdateChangelogDto } from '@src/changelogs/dtos/update-changelog.dto'
-import { groupByDate } from '@src/lib'
+import { CreateChangelogDto } from './dtos/create-changelog.dto'
+import { UpdateChangelogDto } from './dtos/update-changelog.dto'
+import { groupByDate } from '../lib'
 
 @Injectable()
 export class ChangelogsService {

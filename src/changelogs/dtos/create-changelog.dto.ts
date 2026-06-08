@@ -1,6 +1,6 @@
 import { IsEnum, IsNotEmpty, IsString, IsDateString } from 'class-validator'
 
-import { ChangelogTypeUnion } from '@src/changelogs/types/changelog'
+import { ChangelogTypeUnion } from '../types/changelog'
 
 export class CreateChangelogDto {
   @IsEnum(['ADD', 'FIX'])

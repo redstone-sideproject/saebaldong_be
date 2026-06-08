@@ -12,10 +12,10 @@ import {
   TeamTypeUnion,
   ValorantAgentUnion,
   ValorantTierUnion,
-} from '@src/valorant-match/types/valorant-match'
+} from '../types/valorant-match'
 
-import { Streamer } from '@src/streamers/streamer.entity'
-import { ValorantMatchEntity } from '@src/valorant-match/entities/valorant-match.entitiy'
+import { Streamer } from '../../streamers/streamer.entity'
+import { ValorantMatchEntity } from './valorant-match.entitiy'
 
 @Entity('valorant_match_player')
 export class ValorantMatchPlayerEntity {

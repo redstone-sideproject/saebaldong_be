@@ -1,4 +1,4 @@
-import { JwtPayload } from '@src/auth/types/token-data.type'
+import { JwtPayload } from './token-data.type'
 declare module 'express' {
   interface Request {
     user: JwtPayload

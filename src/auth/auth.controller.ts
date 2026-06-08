@@ -8,12 +8,12 @@ import {
   UnauthorizedException,
   Get,
 } from '@nestjs/common'
-import { AuthService } from '@src/auth/auth.service'
+import { AuthService } from './auth.service'
 
-import { LoginDto } from '@src/auth/dtos/login.dto'
+import { LoginDto } from './dtos/login.dto'
 import { Response, Request } from 'express'
 
-import { JwtAuthGuard } from '@src/auth/guards/jwt-auth.guard'
+import { JwtAuthGuard } from './guards/jwt-auth.guard'
 import { ConfigService } from '@nestjs/config'
 @Controller('auth')
 export class AuthController {

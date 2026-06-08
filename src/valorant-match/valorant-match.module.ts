@@ -4,8 +4,8 @@ import { ValorantMatchService } from './valorant-match.service'
 
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { ValorantMatchEntity } from '@src/valorant-match/entities/valorant-match.entitiy'
-import { ValorantMatchPlayerEntity } from '@src/valorant-match/entities/valorant-match-player.entity'
+import { ValorantMatchEntity } from './entities/valorant-match.entitiy'
+import { ValorantMatchPlayerEntity } from './entities/valorant-match-player.entity'
 @Module({
   imports: [
     TypeOrmModule.forFeature([ValorantMatchEntity, ValorantMatchPlayerEntity]),

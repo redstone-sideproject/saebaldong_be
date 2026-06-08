@@ -1,12 +1,12 @@
 import { DataSourceOptions } from 'typeorm'
 import { ConfigService } from '@nestjs/config'
-import { Streamer } from '@src/streamers/streamer.entity'
-import { Timeline } from '@src/timeline/timeline.entity'
-import { Participation } from '@src/timeline/participation.entity'
-import { ChangelogEntity } from '@src/changelogs/entities/changelog.entity'
-import { UserEntity } from '@src/user/entities/user.entity'
-import { ValorantMatchEntity } from '@src/valorant-match/entities/valorant-match.entitiy'
-import { ValorantMatchPlayerEntity } from '@src/valorant-match/entities/valorant-match-player.entity'
+import { Streamer } from '../streamers/streamer.entity'
+import { Timeline } from '../timeline/timeline.entity'
+import { Participation } from '../timeline/participation.entity'
+import { ChangelogEntity } from '../changelogs/entities/changelog.entity'
+import { UserEntity } from '../user/entities/user.entity'
+import { ValorantMatchEntity } from '../valorant-match/entities/valorant-match.entitiy'
+import { ValorantMatchPlayerEntity } from '../valorant-match/entities/valorant-match-player.entity'
 
 export const typeOrmConfig = (
   env: string,
